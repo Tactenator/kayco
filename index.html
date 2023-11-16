@@ -7,15 +7,15 @@
     <link href="/dist/output.css" rel="stylesheet">
 </head>
 <body>
-    <div class="flex flex-row justify-between w-full">
+    <div class="flex flex-row justify-between w-full px-20 py-5">
         <div></div>
         <h1 class="text-4xl">Kay & Co</h1>
         <div id="cart-container" class="">
             <i id="cart-icon">Cart</i>    
         </div>
     </div>
-    <nav>
-        <ul>
+    <nav class="w-full flex flex-row justify-center px-20 py-5">
+        <ul class="flex flex-row justify-center gap-20">
             <a href="#">Home</a>
             <a href="#">About Us</a>
             <a href="#">Shop</a>
@@ -24,12 +24,13 @@
     </nav>
 
     <!-- Hero Section : Should be a slideshow -->
-    <section>
-        <div >
-            <h2>Candle Stuff</h2>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga ipsam accusamus cum recusandae, non</p>
-            <button>Shop Now</button>
-        </div>        
+    <section class="h-[70vh] w-full flex flex-row justify-start my-auto" style="background-image: url('./public/img/slider-1.webp'); background-size: 100%; ">
+            <div class="flex flex-col justify-center items-start py-20 px-40 gap-5">
+                <h2>Candle Stuff</h2>
+                <p class="w-1/2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga ipsam accusamus cum recusandae, non</p>
+                <button>Shop Now</button>
+            </div> 
+            <div></div>      
     </section>
 
     <!-- Small Image Grid of Candles -->
