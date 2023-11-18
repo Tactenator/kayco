@@ -663,6 +663,10 @@ video {
   height: 30vh;
 }
 
+.h-full {
+  height: 100%;
+}
+
 .w-1\/2 {
   width: 50%;
 }
