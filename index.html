@@ -124,28 +124,32 @@
             <div id="img-container">
                 <img width="414" height="620" src="./public/img/about.jpg" alt="family photo">
             </div>
-            <div class="flex flex-row justify-center gap-5 bg-secondary w-1/2 rounded-xl py-10">
-                <div>
-                    <img class="transform rotate-180 scale-x-[-1]" src="./public/img/leaves.png">
+            <div class="flex flex-col \items-center gap-5 bg-secondary w-1/2 rounded-xl py-10">
+                <div class="flex flex-row justify-center gap-5">
+                    <div><img class="transform rotate-180 scale-x-[-1]" src="./public/img/leaves.png"></div>
+                    <h1 class="text-4xl font-">Made With Love</h1>
+                    <div><img class="transform rotate-180" src="./public/img/leaves.png"></div>
                 </div>
-                <h1 class="text-4xl">Made With Love</h1>
-                <div>
-                    <img class="transform rotate-180" src="./public/img/leaves.png">
+                <div class="h-[4px] w-3/4 bg-primary mx-auto text-center"></div>
+                <div class="flex flex-col gap-10 p-20">
+                    <p class="indent-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum molestias fugit laudantium unde provident dolor explicabo accusamus nobis porro nisi dicta fuga, quia obcaecati et ab quidem culpa. Architecto, incidunt?</p>
+                    <blockquote class="relative">
+                        <svg class="absolute -top-6 -start-8 h-16 w-16 text-gray-100 dark:text-gray-700" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                          <path d="M7.39762 10.3C7.39762 11.0733 7.14888 11.7 6.6514 12.18C6.15392 12.6333 5.52552 12.86 4.76621 12.86C3.84979 12.86 3.09047 12.5533 2.48825 11.94C1.91222 11.3266 1.62421 10.4467 1.62421 9.29999C1.62421 8.07332 1.96459 6.87332 2.64535 5.69999C3.35231 4.49999 4.33418 3.55332 5.59098 2.85999L6.4943 4.25999C5.81354 4.73999 5.26369 5.27332 4.84476 5.85999C4.45201 6.44666 4.19017 7.12666 4.05926 7.89999C4.29491 7.79332 4.56983 7.73999 4.88403 7.73999C5.61716 7.73999 6.21938 7.97999 6.69067 8.45999C7.16197 8.93999 7.39762 9.55333 7.39762 10.3ZM14.6242 10.3C14.6242 11.0733 14.3755 11.7 13.878 12.18C13.3805 12.6333 12.7521 12.86 11.9928 12.86C11.0764 12.86 10.3171 12.5533 9.71484 11.94C9.13881 11.3266 8.85079 10.4467 8.85079 9.29999C8.85079 8.07332 9.19117 6.87332 9.87194 5.69999C10.5789 4.49999 11.5608 3.55332 12.8176 2.85999L13.7209 4.25999C13.0401 4.73999 12.4903 5.27332 12.0713 5.85999C11.6786 6.44666 11.4168 7.12666 11.2858 7.89999C11.5215 7.79332 11.7964 7.73999 12.1106 7.73999C12.8437 7.73999 13.446 7.97999 13.9173 8.45999C14.3886 8.93999 14.6242 9.55333 14.6242 10.3Z" fill="currentColor"/>
+                        </svg>
+                      
+                        <div class="relative z-10">
+                          <p class="text-gray-800 sm:text-xl dark:text-white"><em>
+                            I just wanted to say that I'm very happy with my purchase so far. The documentation is outstanding - clear and detailed.
+                          </em></p>
+                        </div>
+                      </blockquote>
+                    <p class="indent-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum molestias fugit laudantium unde provident dolor explicabo accusamus nobis porro nisi dicta fuga, quia obcaecati et ab quidem culpa. Architecto, incidunt?</p>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Small bits of info about the products/company -->
-    <section>
-        <div id="about-blurbs">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </section>
     
-
     <section class="px-20 py-10">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div class="grid gap-2">
@@ -187,14 +191,68 @@
         </div>
     </section>
 
+    <!-- Small bits of info about the products/company -->
+    <section class="px-40">
+        <div id="about-blurbs" class="flex flex-row justify-center items-center gap-20 ">
+            <div class="bg-blurb p-20 flex flex-col rounded-xl gap-5 ">
+                <div class="mx-auto">
+                    <img src="./public/img/leaves.png">
+                </div>
+                <h3 class="text-center text-2xl font-bold text-text">Made From Scratch</h3>
+                <p class="text-lg font-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quidem</p>
+            </div>
+            <div class="bg-blurb p-20  flex flex-col rounded-xl gap-5">
+                <div class="mx-auto">
+                    <img src="./public/img/leaves.png">
+                </div>
+                <h3 class="text-center text-2xl font-bold">Made From Scratch</h3>
+                <p class="text-lg font-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quidem</p>
+            </div>
+            <div class="bg-blurb p-20  flex flex-col rounded-xl gap-5">
+                <div class="mx-auto">
+                    <img src="./public/img/leaves.png">
+                </div>
+                <h3 class="text-center text-2xl font-bold">Made From Scratch</h3>
+                <p class="text-lg font-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quidem</p>
+            </div>
+        </div>
+    </section>
+
+</section>
+
+<!-- Contact Form -->
+
+<section id="contact" name="contact" class="flex flex-col sm:flex-row justify-center items-center gap-20 py-24 bg-cream">
+    <div class="w-full sm:max-w-[50%] sm:w-1/2 shrink-0 px-10 sm:p-10 my-4 py-10 md:px-12 md:w-[50%] lg:w-[50%] lg:pl-20 lg:pr-20 rounded-2xl shadow-2xl">
+      <div class="flex flex-col">
+        <h1 class="font-bold text-5xl"><strong class="text-accent">Let's</strong> Chat</h1>
+        <p>Ready to get started?</p>
+      </div>
+      <div class="grid grid-cols-1 gap-5 md:grid-cols-2 mt-5">
+        <input class="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg border border-1 border-gray-300"
+            type="text" placeholder="First Name*" />
+        <input class="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg  focus:shadow-outline border border-1 border-gray-300"
+            type="text" placeholder="Last Name*" />
+        <input class="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:shadow-outline border border-1 border-gray-300"
+            type="email" placeholder="Email*" />
+        <input class="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:shadow-outline border border-1 border-gray-300"
+            type="text" placeholder="Phone*" />
+        </div>
+        <div class="my-4">
+          <textarea placeholder="Message*" class="w-full h-32 bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:shadow-outline border border-1 border-gray-300"></textarea>
+        </div>
+        <div class="my-2 sm:w-1/2 lg:w-1/2">
+          <button class="uppercase text-sm font-bold tracking-wide bg-primary text-white p-3 rounded-lg w-full focus:outline-none focus:shadow-outline">
+            Send Message
+          </button>
+        </div>
+      </div>
+    <img width="500" height="500" src="./public/img/horizontal-family-photo.jpg" alt="Woman attaching a file to an email">
+  </section>
+
     <footer>
-        <ul>
-            <a href="#">Home</a>
-            <a href="#">About Us</a>
-            <a href="#">Shop</a>
-            <a href="#">Contact</a>
-        </ul>
-        <div id="copyright"></div>
+        <div id="copyright" class="text-center text-sm py-5">© 2023 Kay & Co. All Rights Reserved</div>
     </footer>
+    <script></script>
 </body>
 </html>

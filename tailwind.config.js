@@ -15,6 +15,7 @@ module.exports = {
         'primary': '#205b5b',
         'secondary': '#eee6e2',
         'accent': '#42bd80',
+        'blurb': "#f2f2f2"
        }
     },
   },
