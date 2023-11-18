@@ -14,8 +14,8 @@
             <i id="cart-icon">Cart</i>    
         </div>
     </div>
-    <nav class="w-full flex flex-row justify-center px-20 p-10">
-        <ul class="flex flex-row justify-center gap-20 text-2xl font-bold">
+    <nav class="w-full flex flex-row justify-center pt-10 sm:px-20 sm:py-10">
+        <ul class="flex flex-row justify-center items-center gap-10 sm:gap-20 text-2xl font-bold">
             <a  href="#about">About Us</a>
             <a href="#shop">Shop</a>
             <a href="#contact">Contact</a>
@@ -23,14 +23,14 @@
     </nav>
 
     <!-- Hero Section : Should be a slideshow -->
-    <section class="h-[70vh] w-full flex flex-row justify-start my-auto" style="background-image: url('./public/img/slider-1.webp'); background-size: 100%; ">
-            <div class="flex flex-col justify-center items-start py-20 px-40 gap-5">
-                <h2 class="text-3xl font-bold">Candle Stuff</h2>
-                <p class="w-3/5">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga ipsam accusamus cum recusandae, non</p>
-                <button 
-                class="bg-primary px-10 py-4 border text-white rounded-xl text-xl transition-all duration-150 hover:bg-accent">
+    <section class="h-[30vh] sm:h-[70vh] w-full flex flex-row justify-start my-auto bg-no-repeat bg-center" style="background-image: url('./public/img/slider-1.webp'); background-size: 100%;">
+            <div class="flex flex-col justify-center items-start sm:py-20 sm:px-40 gap-5">
+                <h2 class="text-xl sm:text-3xl pl-10 font-bold">Candle Stuff</h2>
+                <p class="hidden sm:block sm:w-3/5">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga ipsam accusamus cum recusandae, non</p>
+                <a href="#contact" 
+                class="bg-primary px-5 py-4 ml-8 sm:px-10 sm:py-4 border text-white rounded-xl text-xl transition-all duration-150 hover:bg-accent">
                     Shop Now
-                </button>
+                </a>
             </div> 
             <div></div>      
     </section>
@@ -54,7 +54,7 @@
             <div>Our Products</div>
             <img class="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2" src="./public/img/section-shape-1.svg">
         </div>
-        <div class="grid grid-cols-4 px-10">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 px-10">
             <div id="product" class="p-5">
                 <img width="392" height="400" src="./public/img/product-02.webp" alt="product">
                 <div class="pt-2 flex flex-col gap-3">
@@ -112,18 +112,18 @@
     </section>
 
     <!-- Small About Us Blurb -->
-    <section id="about" class="px-20 py-10">
+    <section id="about" class="sm:px-20 sm:py-10">
         <div class="text-center py-10 text-4xl relative my-10">
             <div>About Us</div>
             <img class="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2" src="./public/img/section-shape-1.svg">
         </div>
 
         <!-- Photo of the family? Quick blurb about family/owners maybe? -->
-        <div class="px-20 flex flex-row justify-around">
-            <div id="img-container">
+        <div class="sm:px-20 flex flex-col sm:flex-row justify-around">
+            <div id="img-container" class="mx-auto sm:mx-0">
                 <img width="414" height="620" src="./public/img/about.jpg" alt="family photo">
             </div>
-            <div class="flex flex-col \items-center gap-5 bg-secondary w-1/2 rounded-xl py-10">
+            <div class="flex flex-col items-center gap-5 bg-secondary sm:w-1/2 rounded-xl py-10">
                 <div class="flex flex-row justify-center gap-5">
                     <div><img class="transform rotate-180 scale-x-[-1]" src="./public/img/leaves.png"></div>
                     <h1 class="text-4xl font-">Made With Love</h1>
@@ -191,8 +191,8 @@
     </section>
 
     <!-- Small bits of info about the products/company -->
-    <section class="px-40">
-        <div id="about-blurbs" class="flex flex-row justify-center items-center gap-20 ">
+    <section class="px-5 sm:px-40">
+        <div id="about-blurbs" class="flex flex-col sm:flex-row justify-center items-center gap-20 ">
             <div class="bg-blurb p-20 flex flex-col rounded-xl gap-5 ">
                 <div class="mx-auto">
                     <img src="./public/img/leaves.png">
