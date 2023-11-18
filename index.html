@@ -3,23 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Kay & Co</title>
     <link href="/dist/output.css" rel="stylesheet">
 </head>
-<body class="bg-background">
-    <div class="flex flex-row justify-between w-full px-20 py-5">
+<body class="bg-background text-text">
+    <div class="flex flex-row justify-between w-full px-20 py-5 bg-secondary">
         <div></div>
-        <h1 class="text-4xl">Kay & Co</h1>
+        <h1 class="text-4xl font-bold">Kay & Co</h1>
         <div id="cart-container" class="">
             <i id="cart-icon">Cart</i>    
         </div>
     </div>
     <nav class="w-full flex flex-row justify-center px-20 p-10">
-        <ul class="flex flex-row justify-center gap-20 text-xl">
-            <a href="#">Home</a>
-            <a href="#">About Us</a>
-            <a href="#">Shop</a>
-            <a href="#">Contact</a>
+        <ul class="flex flex-row justify-center gap-20 text-2xl font-bold">
+            <a  href="#about">About Us</a>
+            <a href="#shop">Shop</a>
+            <a href="#contact">Contact</a>
         </ul>
     </nav>
 
@@ -50,7 +49,7 @@
 
     <!-- Grid of Current Products -->
 
-    <section>
+    <section id="shop">
         <div class="text-center px-10 py-10 text-4xl relative my-10">
             <div>Our Products</div>
             <img class="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2" src="./public/img/section-shape-1.svg">
@@ -61,7 +60,7 @@
                 <div class="pt-2 flex flex-col gap-3">
                     <p class="text-xl font-bold">Candle Name</p>
                     <span><i class="font-light">Nice candle description here</i></span>
-                    <div class="text-primary">$19.99</div>
+                    <div class="text-primary font-bold">$19.99</div>
                     <button 
                         class="bg-primary px-5 py-2 w-1/2 border text-white rounded-xl text-xl 
                         transition-all duration-150 hover:bg-accent">
@@ -87,7 +86,7 @@
                 <div class="pt-2 flex flex-col gap-3">
                     <p class="text-xl font-bold">Candle Name</p>
                     <span><i class="font-light">Nice candle description here</i></span>
-                    <div class="text-primary">$19.99</div>
+                    <div class="text-primary font-bold">$19.99</div>
                     <button 
                         class="bg-primary px-5 py-2 w-1/2 border text-white rounded-xl text-xl 
                         transition-all duration-150 hover:bg-accent">
@@ -100,7 +99,7 @@
                 <div class="pt-2 flex flex-col gap-3">
                     <p class="text-xl font-bold">Candle Name</p>
                     <span><i class="font-light">Nice candle description here</i></span>
-                    <div class="text-primary">$19.99</div>
+                    <div class="text-primary font-bold">$19.99</div>
                     <button 
                         class="bg-primary px-5 py-2 w-1/2 border text-white rounded-xl text-xl 
                         transition-all duration-150 hover:bg-accent">
@@ -113,7 +112,7 @@
     </section>
 
     <!-- Small About Us Blurb -->
-    <section class="px-20 py-10">
+    <section id="about" class="px-20 py-10">
         <div class="text-center py-10 text-4xl relative my-10">
             <div>About Us</div>
             <img class="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2" src="./public/img/section-shape-1.svg">

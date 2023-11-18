@@ -12,11 +12,12 @@ module.exports = {
       colors: {
         'text': '#260d0d',
         'background': '#fafafa',
-        'primary': '#205b5b',
+        'primary': '#c24c4c',
         'secondary': '#eee6e2',
-        'accent': '#42bd80',
-        'blurb': "#f2f2f2"
-       }
+        'accent': '#a73939',
+        'blurb': '#f2f2f2'
+       },
+       
     },
   },
   plugins: [],
