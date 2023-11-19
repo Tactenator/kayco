@@ -12,6 +12,14 @@ document.addEventListener("DOMContentLoaded", function() {
         showItems(json)
     }
 
+    localStorage.setItem("cart", cart)
+
+    addToCartButton.forEach(button => {
+        button.addEventListener('click', (e) => {
+            handleStorage(e.target.value)
+        })
+    })
+
     fetchItems()
     function showItems(e) {
         console.log(e)
@@ -43,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function() {
             'rounded-xl', 'text-xl', 'transition-all', 'duration-150', 'hover:bg-accent')
             button.textContent = "Add to Cart"
             button.addEventListener('click', () => {
-            handleStorage(item.name, item.size, item.price)
+            handleStorage(item.img, item.info, item.desciption, item.price)
            })
 
             info.textContent = item.name
