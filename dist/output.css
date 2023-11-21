@@ -570,6 +570,22 @@ video {
   right: 0px;
 }
 
+.top-5 {
+  top: 1.25rem;
+}
+
+.right-5 {
+  right: 1.25rem;
+}
+
+.right-9 {
+  right: 2.25rem;
+}
+
+.top-9 {
+  top: 2.25rem;
+}
+
 .z-10 {
   z-index: 10;
 }
@@ -1032,6 +1048,14 @@ video {
   transition-duration: 150ms;
 }
 
+.duration-200 {
+  transition-duration: 200ms;
+}
+
+.duration-300 {
+  transition-duration: 300ms;
+}
+
 .hover\:cursor-pointer:hover {
   cursor: pointer;
 }
@@ -1039,6 +1063,16 @@ video {
 .hover\:bg-accent:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(167 57 57 / var(--tw-bg-opacity));
+}
+
+.hover\:text-primary:hover {
+  --tw-text-opacity: 1;
+  color: rgb(194 76 76 / var(--tw-text-opacity));
+}
+
+.hover\:text-accent:hover {
+  --tw-text-opacity: 1;
+  color: rgb(167 57 57 / var(--tw-text-opacity));
 }
 
 .focus\:outline-none:focus {

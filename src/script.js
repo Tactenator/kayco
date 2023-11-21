@@ -2,13 +2,18 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const itemGrid = document.getElementById('items-grid')
     const cartIcon = document.getElementById('cart-icon')
+    const closeModalButton = document.getElementById('close-modal')
 
     cartIcon.addEventListener('click', () => {
         openModal()
     })
 
+    closeModalButton.addEventListener('click', () => {
+        closeModal()
+    })
+
     const cart = []
-    let open = false; 
+
 
     localStorage.setItem("cart", cart)
 
@@ -82,17 +87,37 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function openModal() {
         const modal = document.getElementById('cart-modal')
-        if(!open){
-            modal.classList.remove('translate-x-full')
-            open = true
-        }
-        else {
-            modal.classList.add('translate-x-full')
-            open = false; 
-        }
+        modal.classList.remove('translate-x-full')
+    }
+
+    function closeModal() {
+        const modal = document.getElementById('cart-modal')
+        modal.classList.add('translate-x-full')
+
     }
 
     function handleModalData(cart) {
-        console.log('Handle Modal Data Called')
+        const cartModal = document.getElementById('cart-modal')
+        cart.forEach(item => {
+            const div = document.createElement('div')
+            div.classList.add('flex', 'flex-row')
+
+            const name = document.createElement('p')
+            name.classList.add('text-xl', 'font-bold')
+            name.textContent = item.name
+
+            const img = document.createElement('img')
+            img.width = "50"
+            img.height = "50"
+            img.src = item.image
+            img.alt = "Product Photo"
+
+            const price = document.createElement('div')
+            price.classList.add('text-primary', 'font-bold')
+            price.textContent = item.price
+
+            div.append(img, name, price)
+            cartModal.append(div)
+        })
     }
 });
