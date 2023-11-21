@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", function() {
 
-    const checkoutButton = document.querySelector('#checkout')
-    const addToCartButton = document.querySelectorAll('.addToCart')
     const itemGrid = document.getElementById('items-grid')
 
     const cart = []
+
+    localStorage.setItem("cart", cart)
 
     async function fetchItems() {
         const response = await fetch('https://api.npoint.io/751f82bed304ed7ad19f')
@@ -14,13 +14,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     localStorage.setItem("cart", cart)
 
-    addToCartButton.forEach(button => {
-        button.addEventListener('click', (e) => {
-            handleStorage(e.target.value)
-        })
-    })
-
     fetchItems()
+
     function showItems(e) {
         console.log(e)
         e.forEach(item => {
@@ -37,8 +32,8 @@ document.addEventListener("DOMContentLoaded", function() {
             img.src = item.image
             img.alt = "Prodcut Photo"
 
-            const info = document.createElement('p')
-            info.classList.add('text-xl', 'font-bold')
+            const name = document.createElement('p')
+            name.classList.add('text-xl', 'font-bold')
 
             const description = document.createElement('i')
             description.classList.add('font-light')
@@ -50,16 +45,36 @@ document.addEventListener("DOMContentLoaded", function() {
             button.classList.add('bg-primary', 'px-5', 'py-2', 'w-1/2', 'border', 'text-white', 
             'rounded-xl', 'text-xl', 'transition-all', 'duration-150', 'hover:bg-accent')
             button.textContent = "Add to Cart"
+
             button.addEventListener('click', () => {
-            handleStorage(item.img, item.info, item.desciption, item.price)
+                handleStorage(item.image, item.name, item.price)
            })
 
-            info.textContent = item.name
+            name.textContent = item.name
             description.textContent = item.description
             price.textContent = item.price
-            productInfoDiv.append(img, info, description, price, button)
+
+            productInfoDiv.append(img, name, description, price, button)
             newProductDiv.append(productInfoDiv)
             itemGrid.append(newProductDiv)
         })
+    }
+
+    function handleStorage(img, name, price) {
+        let newCart = JSON.parse(localStorage.getItem("cart") || "[]");
+        let newItem = {
+            image: img, 
+            name: name,  
+            price: price, 
+            quantity: 1
+        }
+        newCart.push(newItem)
+        localStorage.setItem("cart", JSON.stringify(newCart))
+        console.log(newCart)
+        handleModalData(newCart)
+    }
+
+    function handleModalData(cart) {
+        console.log('Handle Modal Data Called')
     }
 });
