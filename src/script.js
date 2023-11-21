@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
     })
 
     const cart = []
+    let open = false; 
 
     localStorage.setItem("cart", cart)
 
@@ -81,7 +82,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function openModal() {
         const modal = document.getElementById('cart-modal')
-        modal.classList.remove('')
+        if(!open){
+            modal.classList.remove('translate-x-full')
+            open = true
+        }
+        else {
+            modal.classList.add('translate-x-full')
+            open = false; 
+        }
     }
 
     function handleModalData(cart) {
