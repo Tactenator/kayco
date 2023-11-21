@@ -13,7 +13,7 @@
         <div></div>
         <h1 class="text-4xl font-bold">Kay & Co</h1>
         <div id="cart-container" class="relative">
-            <i class="fas fa-shopping-cart text-2xl text-black hover:cursor-pointer"></i>
+            <i id="cart-icon" class="fas fa-shopping-cart text-2xl text-black hover:cursor-pointer"></i>
             <div class="h-5 w-5 bg-red-600 rounded-full absolute top-0 transform translate-x-3 -translate-y-2 text-white flex flex-row justify-center items-center" style="display: none;"></div>   
         </div>
     </div>
@@ -60,7 +60,6 @@
         <div id="items-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 px-10">
             
         </div>
-        
     </section>
 
     <!-- Small About Us Blurb -->
@@ -200,8 +199,9 @@
       </div>
     <img width="500" height="500" src="./public/img/horizontal-family-photo.jpg" alt="Woman attaching a file to an email">
   </section>
-  <div id="cart-modal" class="fixed h-[100vh] w-2/3 bg-secondary">
-    Penis
+  <div id="cart-modal" class="fixed h-[100vh] w-2/3 top-0 transform -translate-x-full bg-secondary">
+    
+
   </div>
     <footer>
         <div id="copyright" class="text-center text-sm py-5">© 2023 Kay & Co. All Rights Reserved</div>

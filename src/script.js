@@ -1,6 +1,11 @@
 document.addEventListener("DOMContentLoaded", function() {
 
     const itemGrid = document.getElementById('items-grid')
+    const cartIcon = document.getElementById('cart-icon')
+
+    cartIcon.addEventListener('click', () => {
+        openModal()
+    })
 
     const cart = []
 
@@ -72,6 +77,11 @@ document.addEventListener("DOMContentLoaded", function() {
         localStorage.setItem("cart", JSON.stringify(newCart))
         console.log(newCart)
         handleModalData(newCart)
+    }
+
+    function openModal() {
+        const modal = document.getElementById('cart-modal')
+        modal.classList.remove('')
     }
 
     function handleModalData(cart) {
