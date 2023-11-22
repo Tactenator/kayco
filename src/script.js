@@ -113,6 +113,13 @@ document.addEventListener("DOMContentLoaded", function() {
         })
     }
 
+    function removeItemFromCart(cart, name) {
+        const item = cart.findIndex(e => e.name === name)
+        if(item > -1) {
+            //remove item
+        }
+    }
+
     function handleModalData(cart) {
         const cartModal = document.getElementById('cart-modal')
         removeChildNodes(cartModal)
@@ -135,9 +142,16 @@ document.addEventListener("DOMContentLoaded", function() {
             const price = document.createElement('div')
             price.classList.add('text-primary', 'font-bold')
             price.textContent = item.price
+
+            const button = document.createElement('button')
+            button.classList.add('bg-primary', 'px-5', 'py-4', 'ml-8', 'border', 'text-white', 'rounded-xl', 'text-xl', 'transition-all', 'duration-150', 'hover:bg-accent', 'fa-solid', 'fa-trash')
+
+            button.addEventListener('click', () => {
+                removeItemFromCart(cart, item.name)
+            })
             
             infoDiv.append(name, price)
-            div.append(img, infoDiv)
+            div.append(img, infoDiv,button)
             cartModal.append(div)
         })
     }
