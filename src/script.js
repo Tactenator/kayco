@@ -100,7 +100,8 @@ document.addEventListener("DOMContentLoaded", function() {
         const cartModal = document.getElementById('cart-modal')
         cart.forEach(item => {
             const div = document.createElement('div')
-            div.classList.add('flex', 'flex-row')
+            const infoDiv = document.createElement('div')
+            div.classList.add('flex', 'flex-row', 'justify-start', 'items-center', 'gap-10')
 
             const name = document.createElement('p')
             name.classList.add('text-xl', 'font-bold')
@@ -115,8 +116,9 @@ document.addEventListener("DOMContentLoaded", function() {
             const price = document.createElement('div')
             price.classList.add('text-primary', 'font-bold')
             price.textContent = item.price
-
-            div.append(img, name, price)
+            
+            infoDiv.append(name, price)
+            div.append(img, infoDiv)
             cartModal.append(div)
         })
     }
