@@ -73,6 +73,16 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function handleStorage(img, name, price) {
         let newCart = JSON.parse(localStorage.getItem("cart") || "[]");
+        if( newCart.some(e => e.name === name)) {
+            //add upper modal to top of page showing that this item has already been added. 
+            const errorModal = document.getElementById('error-modal')
+            errorModal.textContent = "This item has already been added to your cart."
+            errorModal.classList.remove('-translate-y-20')
+            setTimeout(() => {
+                errorModal.classList.add('-translate-y-20')
+            }, "2000")
+            return
+        }
         let newItem = {
             image: img, 
             name: name,  
@@ -96,10 +106,19 @@ document.addEventListener("DOMContentLoaded", function() {
 
     }
 
+    const removeChildNodes = (parent) => {
+       let children = parent.querySelectorAll('#cart-info')
+        children.forEach(child => {
+            child.parentNode.removeChild( child )
+        })
+    }
+
     function handleModalData(cart) {
         const cartModal = document.getElementById('cart-modal')
+        removeChildNodes(cartModal)
         cart.forEach(item => {
             const div = document.createElement('div')
+            div.setAttribute('id', 'cart-info')
             const infoDiv = document.createElement('div')
             div.classList.add('flex', 'flex-row', 'justify-start', 'items-center', 'gap-10')
 
