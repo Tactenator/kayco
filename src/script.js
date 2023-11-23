@@ -91,7 +91,6 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         newCart.push(newItem)
         localStorage.setItem("cart", JSON.stringify(newCart))
-        console.log(newCart)
         handleModalData(newCart)
     }
 
@@ -113,10 +112,15 @@ document.addEventListener("DOMContentLoaded", function() {
         })
     }
 
-    function removeItemFromCart(cart, name) {
+    function removeItemFromCart(name) {
+        let cart = JSON.parse(localStorage.getItem("cart"));
+        console.log(cart)
         const item = cart.findIndex(e => e.name === name)
         if(item > -1) {
-            //remove item
+
+            cart = cart.splice(item, 1)
+            localStorage.setItem("cart", JSON.stringify(cart))
+            handleModalData(cart)
         }
     }
 
@@ -147,7 +151,7 @@ document.addEventListener("DOMContentLoaded", function() {
             button.classList.add('bg-primary', 'px-5', 'py-4', 'ml-8', 'border', 'text-white', 'rounded-xl', 'text-xl', 'transition-all', 'duration-150', 'hover:bg-accent', 'fa-solid', 'fa-trash')
 
             button.addEventListener('click', () => {
-                removeItemFromCart(cart, item.name)
+                removeItemFromCart(item.name)
             })
             
             infoDiv.append(name, price)
