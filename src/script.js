@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const itemGrid = document.getElementById('items-grid')
     const cartIcon = document.getElementById('cart-icon')
-    const ul = document.querySelector('ul')
+    const productsList = document.getElementById('products-list')
     const closeModalButton = document.getElementById('close-modal')
 
     cartIcon.addEventListener('click', () => {
@@ -150,7 +150,7 @@ document.addEventListener("DOMContentLoaded", function() {
             productInfo.classList.add('flex', 'justify-between', 'text-base', 'font-medium', 'text-gray-900')
 
             const name = document.createElement('h3')
-            header.textContent = item.name
+            name.textContent = item.name
 
             const price = document.createElement('p')
             price.classList.add('ml-4')
@@ -183,7 +183,7 @@ document.addEventListener("DOMContentLoaded", function() {
             })
             
             li.append(imageContainer, productDiv )
-            ul.append(li)
+            productsList.append(li)
         })
     }
 });
