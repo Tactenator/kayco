@@ -114,11 +114,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function removeItemFromCart(name) {
         let cart = JSON.parse(localStorage.getItem("cart"));
-        console.log(cart)
         const item = cart.findIndex(e => e.name === name)
         if(item > -1) {
-
-            cart = cart.splice(item, 1)
+            cart.splice(item, 1)
             localStorage.setItem("cart", JSON.stringify(cart))
             handleModalData(cart)
         }
