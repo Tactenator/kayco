@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const itemGrid = document.getElementById('items-grid')
     const cartIcon = document.getElementById('cart-icon')
+    const ul = document.querySelector('ul')
     const closeModalButton = document.getElementById('close-modal')
 
     cartIcon.addEventListener('click', () => {
@@ -126,35 +127,63 @@ document.addEventListener("DOMContentLoaded", function() {
         const cartModal = document.getElementById('cart-modal')
         removeChildNodes(cartModal)
         cart.forEach(item => {
-            const div = document.createElement('div')
-            div.setAttribute('id', 'cart-info')
-            const infoDiv = document.createElement('div')
-            div.classList.add('flex', 'flex-row', 'justify-start', 'items-center', 'gap-10')
 
-            const name = document.createElement('p')
-            name.classList.add('text-xl', 'font-bold')
-            name.textContent = item.name
+            const li = document.createElement('li'); 
+            li.classList.add('flex', 'py-6')
+
+            const imageContainer = document.createElement('div')
+            imageContainer.classList.add('h-24', 'w-24', 'flex-shrink-0', 'overflow-hidden', 'rounded-md', 'border', 'border-gray-200' )
 
             const img = document.createElement('img')
-            img.width = "50"
-            img.height = "50"
+            img.classList.add('h-full', 'w-full', 'object-cover', 'object-center')
             img.src = item.image
             img.alt = "Product Photo"
+            imageContainer.append(img)
 
-            const price = document.createElement('div')
-            price.classList.add('text-primary', 'font-bold')
+            const productDiv = document.createElement('div')
+            productDiv.classList.add('ml-4', 'flex', 'flex-1', 'flex-col')
+
+            const productDivWrapper = document.createElement('div')
+            productDiv.append(productDivWrapper)
+
+            const productInfo = document.createElement('div')
+            productInfo.classList.add('flex', 'justify-between', 'text-base', 'font-medium', 'text-gray-900')
+
+            const name = document.createElement('h3')
+            header.textContent = item.name
+
+            const price = document.createElement('p')
+            price.classList.add('ml-4')
             price.textContent = item.price
 
-            const button = document.createElement('button')
-            button.classList.add('bg-primary', 'px-5', 'py-4', 'ml-8', 'border', 'text-white', 'rounded-xl', 'text-xl', 'transition-all', 'duration-150', 'hover:bg-accent', 'fa-solid', 'fa-trash')
+            productInfo.append(name, price)
+            productDivWrapper.append(productInfo)
 
-            button.addEventListener('click', () => {
+            const productQuantityContainer = document.createElement('div')
+            productQuantityContainer.classList.add('flex', 'flex-1', 'items-end', 'justify-between', 'text-sm')
+
+            const quantity = document.createElement('p')
+            quantity.classList.add('text-gray-500')
+
+            productQuantityContainer.append(quantity)
+            productDiv.append(productQuantityContainer)
+
+            const removeButtonContainer = document.createElement('div')
+            removeButtonContainer.classList.add('flex')
+
+            const removeButton = document.createElement('button')
+            removeButton.classList.add('font-medium', 'text-indigo-600', 'hover:text-indigo-500')
+            removeButton.textContent = 'Remove'
+
+            removeButtonContainer.append(removeButton)
+            productQuantityContainer.append(removeButtonContainer)
+
+            removeButton.addEventListener('click', () => {
                 removeItemFromCart(item.name)
             })
             
-            infoDiv.append(name, price)
-            div.append(img, infoDiv,button)
-            cartModal.append(div)
+            li.append(imageContainer, productDiv )
+            ul.append(li)
         })
     }
 });
