@@ -74,8 +74,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function handleStorage(img, name, price) {
         let newCart = JSON.parse(localStorage.getItem("cart") || "[]");
-        if( newCart.some(e => e.name === name)) {
-            //add upper modal to top of page showing that this item has already been added. 
+        if( newCart.some(e => e.name === name)) { 
             const errorModal = document.getElementById('error-modal')
             errorModal.textContent = "This item has already been added to your cart."
             errorModal.classList.remove('-translate-y-20')
@@ -115,10 +114,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function removeItemFromCart(name) {
         let cart = JSON.parse(localStorage.getItem("cart"));
+        console.log(cart)
         const item = cart.findIndex(e => e.name === name)
+        console.log(item)
         if(item > -1) {
             cart.splice(item, 1)
             localStorage.setItem("cart", JSON.stringify(cart))
+            console.log(JSON.parse(localStorage.getItem("cart")))
             handleModalData(cart)
         }
     }
