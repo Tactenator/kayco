@@ -124,6 +124,10 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
+    function handlePrice(cart) {
+        
+    }
+
     function handleModalData(cart) {
         console.log(cart)
         const cartModal = document.getElementById('cart-modal')
@@ -186,6 +190,7 @@ document.addEventListener("DOMContentLoaded", function() {
             
             li.append(imageContainer, productDiv )
             productsList.append(li)
+            handlePrice(cart)
         })
     }
 });
