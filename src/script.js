@@ -106,10 +106,9 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     const removeChildNodes = (parent) => {
-       let children = parent.querySelectorAll('#cart-info')
-        children.forEach(child => {
-            child.parentNode.removeChild( child )
-        })
+        while(parent.firstChild) {
+            parent.removeChild(parent.firstChild)
+        }
     }
 
     function removeItemFromCart(name) {
@@ -126,8 +125,9 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function handleModalData(cart) {
+        console.log(cart)
         const cartModal = document.getElementById('cart-modal')
-        removeChildNodes(cartModal)
+        removeChildNodes(productsList)
         cart.forEach(item => {
 
             const li = document.createElement('li'); 
