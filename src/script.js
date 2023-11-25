@@ -15,16 +15,15 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const cart = []
 
-
-    localStorage.setItem("cart", cart)
-
     async function fetchItems() {
         const response = await fetch('https://api.npoint.io/751f82bed304ed7ad19f')
         const json = await response.json()
+        handleCheckoutData()
         showItems(json)
     }
 
     localStorage.setItem("cart", cart)
+    
 
     fetchItems()
 
@@ -126,15 +125,32 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function handlePrice(cart) {
         //grab all prices from each object in the cart and add them. 
-        let currentPrice = 0  
+        let currentPrice = 0.00  
         cart.forEach(item  => {
             currentPrice += item.price
         })
-        document.getElementById('total-price').textContent = currentPrice
+        document.getElementById('total-price').textContent = '$' + currentPrice
+    }
+
+    function handleCheckoutData () {
+        const productsDiv = productsList.children
+        console.log(productsDiv)
+        const checkoutContainer = document.getElementById('checkout-button-container')
+        if(productsDiv.length === 0) {
+            productsList.classList.add('hidden')
+            checkoutContainer.classList.add('hidden')
+            document.getElementById('empty-cart').classList.remove('hidden')
+        }
+        else {
+            document.getElementById('empty-cart').classList.add('hidden')
+            productsList.classList.remove('hidden')
+            checkoutContainer.classList.remove('hidden')
+        }
+       
+
     }
 
     function handleModalData(cart) {
-        console.log(cart)
         const cartModal = document.getElementById('cart-modal')
         removeChildNodes(productsList)
         cart.forEach(item => {
@@ -195,6 +211,7 @@ document.addEventListener("DOMContentLoaded", function() {
             
             li.append(imageContainer, productDiv )
             productsList.append(li)
+            handleCheckoutData()
             handlePrice(cart)
         })
     }
