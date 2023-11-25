@@ -125,7 +125,12 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function handlePrice(cart) {
-        
+        //grab all prices from each object in the cart and add them. 
+        let currentPrice = 0  
+        cart.forEach(item  => {
+            currentPrice += item.price
+        })
+        document.getElementById('total-price').textContent = currentPrice
     }
 
     function handleModalData(cart) {
