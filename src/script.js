@@ -134,7 +134,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function handleCheckoutData () {
         const productsDiv = productsList.children
-        console.log(productsDiv)
         const checkoutContainer = document.getElementById('checkout-button-container')
         if(productsDiv.length === 0) {
             productsList.classList.add('hidden')
@@ -142,6 +141,7 @@ document.addEventListener("DOMContentLoaded", function() {
             document.getElementById('empty-cart').classList.remove('hidden')
         }
         else {
+            console.log('called')
             document.getElementById('empty-cart').classList.add('hidden')
             productsList.classList.remove('hidden')
             checkoutContainer.classList.remove('hidden')
