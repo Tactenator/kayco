@@ -112,13 +112,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function removeItemFromCart(name) {
         let cart = JSON.parse(localStorage.getItem("cart"));
-        console.log(cart)
         const item = cart.findIndex(e => e.name === name)
-        console.log(item)
         if(item > -1) {
             cart.splice(item, 1)
             localStorage.setItem("cart", JSON.stringify(cart))
-            console.log(JSON.parse(localStorage.getItem("cart")))
+            
             handleModalData(cart)
         }
     }
@@ -136,25 +134,27 @@ document.addEventListener("DOMContentLoaded", function() {
         const productsDiv = productsList.children
         const checkoutContainer = document.getElementById('checkout-button-container')
         if(productsDiv.length === 0) {
+            console.log('if called')
             productsList.classList.add('hidden')
             checkoutContainer.classList.add('hidden')
             document.getElementById('empty-cart').classList.remove('hidden')
         }
         else {
-            console.log('called')
+            console.log('else called')
             document.getElementById('empty-cart').classList.add('hidden')
             productsList.classList.remove('hidden')
             checkoutContainer.classList.remove('hidden')
         }
-       
-
     }
 
     function handleModalData(cart) {
         const cartModal = document.getElementById('cart-modal')
         removeChildNodes(productsList)
+        if(cart.length === 0 ) { 
+            handleCheckoutData()
+            return
+        }
         cart.forEach(item => {
-
             const li = document.createElement('li'); 
             li.classList.add('flex', 'py-6')
 
