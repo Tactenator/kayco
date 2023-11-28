@@ -14,7 +14,7 @@ app.use(
   })
 )
 
-let Stripe = require("stripe")(env.STRIPE_PRIVATE_KEY)
+let Stripe = require("stripe")(env.parsed.STRIPE_PRIVATE_KEY)
 let products; 
 let storeItems;
 
@@ -25,23 +25,22 @@ fetch(process.env.DATA_URL)
    })
   .then(() => {
     storeItems = products.map(item => ({id: item.id, name: item.name, price: item.actualPrice }))
-    console.log(storeItems)
+
    });
 
    app.post("/create-checkout-session", async (req, res) => {
-    console.log(req.body.items)
     const session = await Stripe.checkout.sessions.create({
       payment_method_types: ["card"],
       line_items: req.body.items.map(item => {
-       const storeItem = storeItems.find((e) => e === item.id)
-       console.log(storeItem)
+       const storeItem = storeItems.find(item => item.id === 1)
+
        return {
         price_data: {
           currency: 'usd', 
           product_data: {
             name: storeItem.name
           }, 
-          unit_amount: storeItem.actualPrice
+          unit_amount: storeItem.price
         }, 
         quantity: item.quantity
        }  
