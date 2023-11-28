@@ -28,7 +28,6 @@ document.addEventListener("DOMContentLoaded", function() {
     fetchItems()
 
     function showItems(e) {
-        console.log(e)
         e.forEach(item => {
 
             const newProductDiv = document.createElement('div')
@@ -222,12 +221,12 @@ document.addEventListener("DOMContentLoaded", function() {
     })
 
     function handleCheckout() {
-        fetch("create-checkout-session", {
+        fetch("http://localhost:3000/create-checkout-session", {
             method: "POST", 
             headers: {
                 "Content-type": "application/json", 
             }, 
-            body: json.stringify({
+            body: JSON.stringify({
                 items: [
                     { id: 1, quantity: 3 }, 
                     { id: 2, quantity: 1 }
