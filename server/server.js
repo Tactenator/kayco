@@ -12,7 +12,7 @@ app.use(cors());
 
 let Stripe = require("stripe")(env.STRIPE_PRIVATE_KEY)
 let products; 
-let map;
+let storeItems;
 
 fetch(process.env.DATA_URL)
   .then(res => res.json())
@@ -20,25 +20,26 @@ fetch(process.env.DATA_URL)
     products = data;
    })
   .then(() => {
-    map = products.map(item => ({ name: item.name, price: item.price }))
-    console.log(map)
+    storeItems = products.map(item => ({id: item.id, name: item.name, price: item.actualPrice }))
+    console.log(storeItems)
    });
 
    app.post("/create-checkout-session", async (req, res) => {
     const session = await Stripe.checkout.sessions.create({
       payment_method_types: ["card"],
-      line_items: [
-        {
-          price_data: {
-            currency: "usd",
-            product_data: {
-              name: "T-shirt",
-            },
-            unit_amount: 2000,
-          },
-          quantity: 1,
-        },
-      ],
+      line_items: req.body.items.map(item => {
+       const storeItem = storeItems.get(item.id)
+       return {
+        price_data: {
+          currency: 'usd', 
+          product_data: {
+            name: storeItem.name
+          }, 
+          unit_amount: storeItem.actualPrice
+        }, 
+        quantity: item.quantity
+       }  
+      }),
       mode: "payment",
       success_url: "http://localhost:5500/success",
       cancel_url: "http://localhost:5500/cancel",
