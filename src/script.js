@@ -224,7 +224,7 @@ document.addEventListener("DOMContentLoaded", function() {
     function handleCheckout() {
         let cart = JSON.parse(localStorage.getItem("cart"));
         
-        fetch("http://localhost:3000/create-checkout-session", {
+        fetch("https://kayco-server.onrender.com/create-checkout-session", {
         method: "POST",
         headers: {
         "Content-Type": "application/json",
