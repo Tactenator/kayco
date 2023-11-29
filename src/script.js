@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function() {
             button.textContent = "Add to Cart"
 
             button.addEventListener('click', () => {
-                handleStorage(item.image, item.name, item.price)
+                handleStorage(item.image, item.name, item.price, item.id)
            })
 
             name.textContent = item.name
@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function() {
         })
     }
 
-    function handleStorage(img, name, price) {
+    function handleStorage(img, name, price, id) {
         let newCart = JSON.parse(localStorage.getItem("cart") || "[]");
         if( newCart.some(e => e.name === name)) { 
             const errorModal = document.getElementById('error-modal')
@@ -82,6 +82,7 @@ document.addEventListener("DOMContentLoaded", function() {
             return
         }
         let newItem = {
+            id: id,
             image: img, 
             name: name,  
             price: price, 
@@ -221,16 +222,15 @@ document.addEventListener("DOMContentLoaded", function() {
     })
 
     function handleCheckout() {
+        let cart = JSON.parse(localStorage.getItem("cart"));
+        
         fetch("http://localhost:3000/create-checkout-session", {
         method: "POST",
         headers: {
         "Content-Type": "application/json",
         },
         body: JSON.stringify({
-        items: [
-            { id: 1, quantity: 3 },
-            { id: 2, quantity: 1 },
-        ],
+        items: cart,
         }),
     })
         .then(res => {

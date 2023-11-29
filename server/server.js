@@ -32,8 +32,8 @@ fetch(process.env.DATA_URL)
     const session = await Stripe.checkout.sessions.create({
       payment_method_types: ["card"],
       line_items: req.body.items.map(item => {
-       const storeItem = storeItems.find(item => item.id === 1)
-
+        console.log(req.body.items)
+       const storeItem = storeItems.find(e => e.id === item.id)
        return {
         price_data: {
           currency: 'usd', 
