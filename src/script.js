@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function() {
         e.forEach(item => {
 
             const newProductDiv = document.createElement('div')
-            newProductDiv.classList.add('p-5')
+            newProductDiv.classList.add('p-5', 'col-span-1')
 
             const productInfoDiv = document.createElement('div')
             productInfoDiv.classList.add('pt-2', 'flex', 'flex-col', 'gap-3')
@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function() {
             price.classList.add('text-primary', 'font-bold')
 
             const button = document.createElement('button')
-            button.classList.add('bg-primary', 'px-5', 'py-2', 'w-1/2', 'border', 'text-white', 
+            button.classList.add('bg-primary', 'px-5', 'py-2', 'w-1/2', 'mt-auto', 'border', 'text-white', 
             'rounded-xl', 'text-xl', 'transition-all', 'duration-150', 'hover:bg-accent')
             button.textContent = "Add to Cart"
 
