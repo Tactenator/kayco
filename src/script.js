@@ -181,7 +181,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
             const price = document.createElement('p')
             price.classList.add('ml-4')
-            price.textContent = item.price
+            price.textContent = "$" + item.price
 
             productInfo.append(name, price)
             productDivWrapper.append(productInfo)
