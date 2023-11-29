@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
             name.textContent = item.name
             description.textContent = item.description
-            price.textContent = item.price
+            price.textContent = "$" + item.price
 
             productInfoDiv.append(img, name, description, price, button)
             newProductDiv.append(productInfoDiv)
