@@ -72,8 +72,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function handleStorage(img, name, price, id) {
         let newCart = JSON.parse(localStorage.getItem("cart") || "[]");
+        const errorModal = document.getElementById('error-modal')
         if( newCart.some(e => e.name === name)) { 
-            const errorModal = document.getElementById('error-modal')
             errorModal.textContent = "This item has already been added to your cart."
             errorModal.classList.remove('-translate-y-20')
             setTimeout(() => {
@@ -88,6 +88,11 @@ document.addEventListener("DOMContentLoaded", function() {
             price: price, 
             quantity: 1
         }
+        errorModal.textContent = "Item added to cart!"
+            errorModal.classList.remove('-translate-y-20')
+            setTimeout(() => {
+                errorModal.classList.add('-translate-y-20')
+            }, "1500")
         newCart.push(newItem)
         localStorage.setItem("cart", JSON.stringify(newCart))
         handleModalData(newCart)
