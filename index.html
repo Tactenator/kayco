@@ -60,7 +60,7 @@
             <div>Our Products</div>
             <img class="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2" src="./public/img/section-shape-1.svg">
         </div>
-        <div id="items-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 px-10" style="grid-auto-rows: 1fr;">
+        <div id="items-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 px-10" style="grid-auto-rows: 1fr min-content;">
             
         </div>
     </section>
@@ -235,7 +235,7 @@
                             <div class="flex flex-col items-center gap-2">
                               <p class="text-2xl font-bold">Your cart is Empty!</p>
                               <p class="text-lg">Let's Change That!</p>
-                              <p class="text-md">Click <a class="text-link" href="#shop">here</a> to keep shopping.</p>
+                              <p onclick="closeModal()" class="text-md">Click <a class="text-link" href="#shop">here</a> to keep shopping.</p>
                             </div>
                           </div>
                         </div>
@@ -267,5 +267,11 @@
     <footer>
         <div id="copyright" class="text-center text-sm py-5">© 2023 Kay & Co. All Rights Reserved</div>
     </footer>
+    <script>
+      function closeModal() {
+        const modal = document.getElementById('cart-modal')
+        modal.classList.add('translate-x-full')
+    }
+    </script>
 </body>
 </html>
