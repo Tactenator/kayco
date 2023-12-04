@@ -1479,6 +1479,10 @@ video {
     gap: 5rem;
   }
 
+  .sm\:gap-10 {
+    gap: 2.5rem;
+  }
+
   .sm\:p-10 {
     padding: 2.5rem;
   }
@@ -1531,6 +1535,11 @@ video {
     font-size: 1.25rem;
     line-height: 1.75rem;
   }
+
+  .sm\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
 }
 
 @media (min-width: 768px) {
@@ -1557,6 +1566,14 @@ video {
   .md\:px-12 {
     padding-left: 3rem;
     padding-right: 3rem;
+  }
+
+  .md\:text-\[4rem\] {
+    font-size: 4rem;
+  }
+
+  .md\:text-\[3\.5rem\] {
+    font-size: 3.5rem;
   }
 }
 
