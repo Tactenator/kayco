@@ -13,13 +13,13 @@ document.addEventListener("DOMContentLoaded", function() {
         ease: 'power4inOut'
       });
 
-      gsap.fromTo("#hero-text a", {
-        opacity: 0, 
+      gsap.fromTo("#shop-button", {
+        opacity: 0,
     }, 
     {
-        opacity: 1, 
-        delay: 1,
-        duration: 1, 
-        ease: 'power4.inOut'
+        opacity: 1,
+        delay: 1, 
+        duration: 0.4, 
+        ease: 'none'
     })
 });
