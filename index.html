@@ -6,6 +6,8 @@
     <title>Kay & Co</title>
     <link type="text/css" rel="stylesheet" href="/dist/output.css" >
     <script src="./src/script.js"></script>
+    <script src="./src/animations.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body class="bg-background text-text relative">
@@ -30,7 +32,7 @@
 
     <!-- Hero Section : Should be a slideshow -->
     <section class="h-[30vh] sm:h-[70vh] w-full flex flex-row justify-start my-auto bg-no-repeat bg-center bg-cover" style="background-image: url('./public/img/slider-1.webp'); ">
-            <div class="flex flex-col justify-center items-start sm:py-20 sm:px-40 gap-5 sm:gap-10">
+            <div id="hero-text" class="flex flex-col justify-center items-start sm:py-20 sm:px-40 gap-5 sm:gap-10">
                 <h2 class="text-xl sm:text-4xl md:text-[3.5rem] sm:pl-0 pl-10 font-bold">Candle Stuff</h2>
                 <p class="hidden font-light sm:block sm:w-3/5 sm:text-2xl">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga ipsam accusamus cum recusandae, non</p>
                 <a href="#shop" 
@@ -145,7 +147,7 @@
     </section>
 
     <!-- Small bits of info about the products/company -->
-    <section class="px-5 sm:px-40">
+    <!-- <section class="px-5 sm:px-40">
         <div id="about-blurbs" class="flex flex-col sm:flex-row justify-center items-center gap-20 ">
             <div class="bg-primary p-20 flex flex-col rounded-xl gap-5 text-secondary">
                 <div class="mx-auto">
@@ -169,7 +171,7 @@
             <p class="text-lg font-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quidem</p>
         </div>
         </div>
-    </section>
+    </section> -->
 
 </section>
 
