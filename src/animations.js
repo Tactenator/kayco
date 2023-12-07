@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
+    
+    
     gsap.from("#hero-text h2", { 
         duration: 0.75,
         opacity: 0, 
